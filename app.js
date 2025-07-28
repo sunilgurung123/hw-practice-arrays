@@ -99,7 +99,7 @@ Exercise 7: Using the `slice()` method
 Complete Exercise 7 in the space below:
 */
 
-let yummy = foods.slice(1, 2);
+let yummy = foods.slice(1, 3);
 
 
 console.log('Exercise 7 result:', yummy);
@@ -231,6 +231,7 @@ for (let i = 0; i < nums.length; i++) {
 
 }
 
+
 console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
 console.log('  buzz:', buzz);
@@ -275,8 +276,16 @@ Exercise 14: Accessing within nested arrays
 
 Complete Exercise 14 in the space below:
 */
+let num = 0;
+for (let i = 0; i < numArrays.length; i++){
+    for ( let j = 0; j < numArrays[i].length; j++){
+        if (numArrays[i][j] === 66){
+            num = numArrays[i][j]
+        }
+    }
+}
 
-let num = numArrays[2][1]; 
+// let num = numArrays[2][1]; 
 
 console.log('Exercise 14 result:', num);
 
@@ -296,12 +305,19 @@ Complete Exercise 15 in the space below:
 
 let total = 0;
 
-for(let i = 0; i < numArrays.length; i++) {
-   for (let j = 0; j < numArrays[i].length; j++){
-      // total = total + numArrays[i][j];
-      total +=  numArrays[i][j];
-   }
-}
+// for loop 
+// for(let i = 0; i < numArrays.length; i++) {
+//    for (let j = 0; j < numArrays[i].length; j++){
+//       // total = total + numArrays[i][j];
+//       total +=  numArrays[i][j];
+//    }
+// }
+
+numArrays.forEach(function(subArray) {
+  subArray.forEach(function(num) {
+    total += num;
+  });
+});
 
 console.log('Exercise 15 result:\n', total);
 
